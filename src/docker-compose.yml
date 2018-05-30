@@ -1,4 +1,4 @@
- zxversion: '2.1'
+version: '2.1'
 
 services:
   b1:
@@ -18,10 +18,8 @@ services:
       #bgp
       - 10104:2605
     networks:
-      nb1b2:
-        ipv6_address: 2001:0:0:1::11
-      nb1b3:
-        ipv6_address: 2001:0:0:3::11  
+      #nb1b2:
+        #ipv6_address: 2001:0:0:1::11
       nr3b1:
         ipv6_address: 2001:aaaa:aaaa:1::111
       nr5b1:
@@ -99,7 +97,7 @@ services:
     image: ospf:20180419
     privileged: true
     networks:
-      nr6.1:
+      nr5h11:
         ipv6_address: 2001:aaaa:aaaa:6::11
 
   h13:
@@ -111,7 +109,7 @@ services:
     image: ospf:20180419
     privileged: true
     networks:
-      nr7.1:
+      nr7h13:
         ipv6_address: 2001:aaaa:aaaa:7::13
 
 
