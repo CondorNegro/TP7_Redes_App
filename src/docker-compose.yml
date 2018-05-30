@@ -18,8 +18,8 @@ services:
       #bgp
       - 10104:2605
     networks:
-      #nb1b2:
-        #ipv6_address: 2001:0:0:1::11
+      nb1b2:
+        ipv6_address: 2001:0:0:1::11
       nr3b1:
         ipv6_address: 2001:aaaa:aaaa:1::111
       nr5b1:
@@ -114,13 +114,13 @@ services:
 
 
 networks:
- # nb1b2:
- #   driver: "bridge"
- #   enable_ipv6: true
- #   ipam:
- #     driver: default
- #     config:
- #       - subnet: 2001:0:0:1::/64
+  nb1b2:
+    driver: "bridge"
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 2001:0:0:1::/64
 
 # RED 1
   nr3b1:
