@@ -1,6 +1,7 @@
 version: '2.1'
 
 services:
+  # ruter BGP de borde
   b1:
     build: ./bgp/.
     volumes:
@@ -27,6 +28,23 @@ services:
       nr7b1:
         ipv6_address: 2001:aaaa:aaaa:3::111
 
+  #servidor DNS
+  bind:
+    restart: always
+    image: sameersbn/bind:latest
+    volumes:
+    - /srv/docker/bind:/data
+    privileged: true
+    dns: 127.0.0.1
+    environment:
+    - 'ROOT_PASSWORD=ubuntu'
+    ports:
+    - 10000:10000/tcp
+    - 53:53/udp    
+    networks:
+      nr3dns:
+        ipv6_address: 2001:aaaa:aaaa:8::4
+
   #routers internos computadora fisica 1
 
   r3:
@@ -45,6 +63,8 @@ services:
     networks:
       nr3b1:
         ipv6_address: 2001:aaaa:aaaa:1::3
+      nr3dns:
+        ipv6_address: 2001:aaaa:aaaa:8::3
 
   r5:
     build: .
@@ -170,4 +190,13 @@ networks:
       driver: default
       config:
         - subnet: 2001:aaaa:aaaa:7::/64
+
+  nr3dns:
+    driver: "bridge"
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 2001:aaaa:aaaa:8::/64
+
 
