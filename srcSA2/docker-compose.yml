@@ -6,7 +6,7 @@ version: '2.1'
 services:
 #Se nombra a los servicios
 #b1, b2 y b3 son routers de borde de SA. 
- b2:
+  b2:
     build: ./bgp/.
     volumes:
       - ./volumes/bgp/b2/zebra.conf:/etc/quagga/zebra.conf:ro
