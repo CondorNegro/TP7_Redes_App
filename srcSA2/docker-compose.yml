@@ -32,7 +32,22 @@ services:
       b2_r8:
         ipv6_address: 2001:bbbb:bbbb:28::2
  
-  
+  #servidor DNS
+  bind:
+    restart: always
+    image: sameersbn/bind:latest
+    volumes:
+    - /srv/docker/bind:/data
+    privileged: true
+    dns: 127.0.0.1
+    environment:
+    - 'ROOT_PASSWORD=ubuntu'
+    ports:
+    - 10000:10000/tcp
+    - 53:53/udp    
+    networks:
+      nr4dns:
+        ipv6_address: 2001:bbbb:bbbb:4::4
   
   r4:
     build: ./ospf/.
@@ -50,6 +65,8 @@ services:
     networks:
       b2_r4:
         ipv6_address: 2001:bbbb:bbbb:24::4
+      nr4dns:
+        ipv6_address: 2001:bbbb:bbbb:4::3
 
   r6:
     build: ./ospf/.
@@ -194,3 +211,11 @@ networks:
       driver: default
       config:
         - subnet: 2001:bbbb:bbbb:814::/64
+
+  nr4dns:
+    driver: "bridge"
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 2001:bbbb:bbbb:4::/64
