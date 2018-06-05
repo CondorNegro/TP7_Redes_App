@@ -1,5 +1,4 @@
 # TP7_Redes_App
-practice work for concurrent programing. Trains
 
 * Version 1
 
