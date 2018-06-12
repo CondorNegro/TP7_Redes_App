@@ -2,12 +2,12 @@ version: '2.1'
 
 services:
   # ruter BGP de borde
-  b1:
+  b2:
     build: ./bgp/.
     volumes:
-      - ./volumes/bgp/b1/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/bgp/b1/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
-      - ./volumes/bgp/b1/bgpd.conf:/etc/quagga/bgpd.conf:ro
+      - ./volumes/bgp/b2/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/bgp/b2/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/bgp/b2/bgpd.conf:/etc/quagga/bgpd.conf:ro
       - ./volumes/bgp/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: bgp:20180426
     privileged: true
@@ -21,19 +21,19 @@ services:
     networks:
       nb1b2:
         ipv6_address: 2001:c:c:c::9
-      nr3b1:
+      nr4b2:
         ipv6_address: 2001:bbbb:bbbb:1::111
-      nr5b1:
+      nr6b2:
         ipv6_address: 2001:bbbb:bbbb:2::111
-      nr7b1:
+      nr8b2:
         ipv6_address: 2001:bbbb:bbbb:3::111
 
   #servidor DNS
-  bind:
+  bind2:
     restart: always
     image: sameersbn/bind:latest
     volumes:
-      - /srv/docker/bind:/data
+      - ./srv/docker/bind:/data
     privileged: true
     dns: 127.0.0.1
     environment:
@@ -42,16 +42,16 @@ services:
       - 10000:10000/tcp
       # - 53:53/udp    
     networks:
-      nr3dns:
+      nr4dns:
         ipv6_address: 2001:bbbb:bbbb:8::4
 
   #routers internos computadora fisica 1
 
-  r3:
+  r4:
     build: ./ospf/.
     volumes:
-      - ./volumes/ospf/r3/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/ospf/r3/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/ospf/r4/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/ospf/r4/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: ospf:20180419
     privileged: true
@@ -61,16 +61,16 @@ services:
       #ospf ipv6
       - 10313:2606
     networks:
-      nr3b1:
+      nr4b2:
         ipv6_address: 2001:bbbb:bbbb:1::3
-      nr3dns:
+      nr4dns:
         ipv6_address: 2001:bbbb:bbbb:8::3
 
-  r5:
+  r6:
     build: ./ospf/.
     volumes:
-      - ./volumes/ospf/r5/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/ospf/r5/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/ospf/r6/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/ospf/r6/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: ospf:20180419
     privileged: true
@@ -80,18 +80,18 @@ services:
       #ospf ipv6
       - 10513:2606
     networks:
-      nr5b1:
+      nr6b2:
         ipv6_address: 2001:bbbb:bbbb:2::5
-      nr5nr7:
+      nr6nr8:
         ipv6_address: 2001:bbbb:bbbb:5::5
-      nr5h11:
+      nr6h12:
         ipv6_address: 2001:bbbb:bbbb:6::5  
 
-  r7:
+  r8:
     build: ./ospf/.
     volumes:
-      - ./volumes/ospf/r7/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/ospf/r7/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/ospf/r8/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/ospf/r8/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: ospf:20180419
     privileged: true
@@ -101,35 +101,35 @@ services:
       #ospf ipv6
       - 10713:2606
     networks:
-      nr7b1:
+      nr8b2:
         ipv6_address: 2001:bbbb:bbbb:3::7
-      nr5nr7:
+      nr6nr8:
         ipv6_address: 2001:bbbb:bbbb:5::7
-      nr7h13:
+      nr8h14:
         ipv6_address: 2001:bbbb:bbbb:7::7
 
-  h11:
+  h12:
     build: ./ospf/.
     volumes:
-      - ./volumes/ospf/h11/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/ospf/h11/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/ospf/h12/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/ospf/h12/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: ospf:20180419
     privileged: true
     networks:
-      nr5h11:
+      nr6h12:
         ipv6_address: 2001:bbbb:bbbb:6::11
 
-  h13:
+  h14:
     build: ./ospf/.
     volumes:
-      - ./volumes/ospf/h13/zebra.conf:/etc/quagga/zebra.conf:ro
-      - ./volumes/ospf/h13/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
+      - ./volumes/ospf/h14/zebra.conf:/etc/quagga/zebra.conf:ro
+      - ./volumes/ospf/h14/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     image: ospf:20180419
     privileged: true
     networks:
-      nr7h13:
+      nr8h14:
         ipv6_address: 2001:bbbb:bbbb:7::13
 
 
@@ -144,7 +144,7 @@ networks:
           gateway: 2001:c:c:c::3
 
 # RED 1
-  nr3b1:
+  nr4b2:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -152,7 +152,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:1::/64
 
-  nr5b1:
+  nr6b2:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -160,7 +160,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:2::/64
 
-  nr7b1:
+  nr8b2:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -168,7 +168,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:3::/64
 
-  nr5nr7:
+  nr6nr8:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -176,7 +176,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:5::/64
 
-  nr5h11:
+  nr6h12:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -184,7 +184,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:6::/64
 
-  nr7h13:
+  nr8h14:
     driver: "bridge"
     enable_ipv6: true
     ipam:
@@ -192,7 +192,7 @@ networks:
       config:
         - subnet: 2001:bbbb:bbbb:7::/64
 
-  nr3dns:
+  nr4dns:
     driver: "bridge"
     enable_ipv6: true
     ipam:
