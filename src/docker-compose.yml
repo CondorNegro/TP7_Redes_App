@@ -33,7 +33,7 @@ services:
     restart: always
     image: sameersbn/bind:latest
     volumes:
-      - /srv/docker/bind:/data
+      - ./srv/docker/bind:/data
     privileged: true
     dns: 127.0.0.1
     environment:
@@ -141,6 +141,7 @@ networks:
       driver: default
       config:
         - subnet: 2001:c:c:c::/64
+          gateway: 2001:c:c:c::2
 
 # RED 1
   nr3b1:
@@ -198,4 +199,3 @@ networks:
       driver: default
       config:
         - subnet: 2001:aaaa:aaaa:8::/64
-
