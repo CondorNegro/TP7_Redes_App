@@ -9,8 +9,8 @@ MAINTAINER Cuenca del Rey, Matias <matias.cuenca@unc.edu.ar>
 RUN apt-get update
 RUN apt-get install -qy --no-install-recommends supervisor quagga telnet tcpdump
 RUN apt-get install -qy traceroute
-RUN apt-get install -qy dnsutils
-RUN apt-cache search dig
+#RUN apt-get install -qy dnsutils
+#RUN apt-cache search dig
 
 
 RUN sed -i 's/ospfd6=no/ospfd6=yes/g' /etc/quagga/daemons

@@ -20,7 +20,7 @@ services:
       - 10104:2605
     networks:
       nb1b2:
-        ipv6_address: 2001:0:0:1::11
+        ipv6_address: 2001:c:c:c::a
       nr3b1:
         ipv6_address: 2001:aaaa:aaaa:1::111
       nr5b1:
@@ -33,14 +33,14 @@ services:
     restart: always
     image: sameersbn/bind:latest
     volumes:
-    - /srv/docker/bind:/data
+      - /srv/docker/bind:/data
     privileged: true
     dns: 127.0.0.1
     environment:
-    - 'ROOT_PASSWORD=ubuntu'
+      - 'ROOT_PASSWORD=ubuntu'
     ports:
-    - 10000:10000/tcp
-    - 53:53/udp    
+      - 10000:10000/tcp
+      # - 53:53/udp    
     networks:
       nr3dns:
         ipv6_address: 2001:aaaa:aaaa:8::4
@@ -57,7 +57,7 @@ services:
     privileged: true
     ports:
       #admin
-      - 10311:2601
+      #- 10311:2601
       #ospf ipv6
       - 10313:2606
     networks:
@@ -67,7 +67,7 @@ services:
         ipv6_address: 2001:aaaa:aaaa:8::3
 
   r5:
-    build: .
+    build: ./ospf/.
     volumes:
       - ./volumes/ospf/r5/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/r5/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
@@ -76,7 +76,7 @@ services:
     privileged: true
     ports:
       #admin
-      - 10511:2601
+      #- 10511:2601
       #ospf ipv6
       - 10513:2606
     networks:
@@ -88,7 +88,7 @@ services:
         ipv6_address: 2001:aaaa:aaaa:6::5  
 
   r7:
-    build: .
+    build: ./ospf/.
     volumes:
       - ./volumes/ospf/r7/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/r7/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
@@ -97,7 +97,7 @@ services:
     privileged: true
     ports:
       #admin
-      - 10711:2601
+      #- 10711:2601
       #ospf ipv6
       - 10713:2606
     networks:
@@ -109,7 +109,7 @@ services:
         ipv6_address: 2001:aaaa:aaaa:7::7
 
   h11:
-    build: .    
+    build: ./ospf/.
     volumes:
       - ./volumes/ospf/h11/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h11/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
@@ -121,7 +121,7 @@ services:
         ipv6_address: 2001:aaaa:aaaa:6::11
 
   h13:
-    build: .
+    build: ./ospf/.
     volumes:
       - ./volumes/ospf/h13/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h13/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
@@ -140,7 +140,7 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 2001:0:0:1::/64
+        - subnet: 2001:c:c:c::/64
 
 # RED 1
   nr3b1:
@@ -198,5 +198,4 @@ networks:
       driver: default
       config:
         - subnet: 2001:aaaa:aaaa:8::/64
-
 
