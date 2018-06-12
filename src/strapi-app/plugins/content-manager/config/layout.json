@@ -1,0 +1,18 @@
+{
+  "alumno": {
+    "attributes": {
+      "first_name": {
+        "appearance": ""
+      },
+      "last_name": {
+        "appearance": ""
+      },
+      "dni": {
+        "appearance": ""
+      },
+      "grupo": {
+        "appearance": ""
+      }
+    }
+  }
+}

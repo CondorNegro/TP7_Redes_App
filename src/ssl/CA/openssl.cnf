@@ -1,0 +1,74 @@
+# -----------------------
+# Configuración inicial
+# -----------------------
+ 
+dir           = .    # Directorio de trabajo
+ 
+[ ca ]
+default_ca    = CA_default
+ 
+[ CA_default ]
+serial        = $dir/contador          # Contador de números de serie
+database      = $dir/certindex         # Listado de certificados
+new_certs_dir = $dir/certificados      # Directorio para los certificados generados
+certificate   = $dir/cacert.pem        # Certificado raíz
+private_key   = $dir/privado/cakey.pem # Clave privada del certificado raíz
+default_md    = sha1                   # Digest usado
+preserve      = no                     # Preserva el orden de los campos del DN
+nameopt       = default_ca             # Muestra detalles del certificado
+certopt       = default_ca             # Muestra detalles del certificado
+policy        = policy_match           # Indica si los campos obligatorios  y/o
+                                       # opcionales deben ser iguales al 
+                                       # certificado raíz
+ 
+# Política de recolección de datos frente al raíz
+[ policy_match ]
+countryName                 = match        
+stateOrProvinceName         = match          
+organizationName            = match
+organizationalUnitName      = optional      
+commonName                  = supplied     
+emailAddress                = optional
+ 
+# Configuración de certificados
+[ req ]
+default_bits       = 2048           # Tamaño de la clave en bits
+default_keyfile    = key.pem        # Fichero de la clave privada
+default_md         = sha1           # Digest
+string_mask        = nombstr        # Caracteres permitidos en la clave
+distinguished_name = req_distinguished_name  # Sección para el nombre DN
+req_extensions     = v3_req         # Sección con mas extensiones que se 
+                                    # añaden a la petición del 
+                                    # certificado
+ 
+# Distinguished Name. Datos públicos del certificado X.509 que identifican al propietario.
+[ req_distinguished_name ]
+0.organizationName          = Nombre de la organización
+0.organizationName_default  = TP7-redes
+organizationalUnitName      = Departamento
+emailAddress                = Correo electrónico
+emailAddress_max            = 40
+localityName                = Ciudad
+localityName_default        = Cordoba
+stateOrProvinceName         = Estado o provincia
+stateOrProvinceName_default = Cordoba
+countryName                 = Código ISO del pais (dos letras)
+countryName_default         = AR
+countryName_min             = 2
+countryName_max             = 2
+commonName                  = Nombre común (nombre del host o IP)
+commonName_max              = 64
+ 
+# Si se indica la opcion -x509 indica que se trata de un certificado CA raíz
+# con autoridad para firmar o revocar otros certificados
+[ v3_ca ]
+basicConstraints       = CA:TRUE  
+                                  
+subjectKeyIdentifier   = hash     
+authorityKeyIdentifier = keyid:always,issuer:always  
+ 
+[ v3_req ]
+basicConstraints            = CA:FALSE
+subjectKeyIdentifier        = hash 
+
+#---------------------------------------------------------------------------------------------------
