@@ -1,0 +1,13 @@
+$ttl 38400
+tp7.	IN	SOA	ns.tp7. sm.sm.redes. (
+			1528831001
+			10800
+			3600
+			604800
+			38400 )
+tp7.	IN	NS	ns.tp7.
+ns.tp7.	IN	AAAA	2001:aaaa:aaaa:8::4
+.sergiomartin.tp7.	IN	NS	ns.sergiomartin
+matiasgaston.tp7.	IN	NS	ns.matiasgaston
+ns.sergiomartin.tp7.	IN	AAAA	2001:aaaa:aaaa:8::4
+ns.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:8::4
