@@ -1,0 +1,15 @@
+zone_6=0.in-addr.arpa	7	master	*	/etc/bind/db.0
+base=/var/cache/bind
+version=3
+file_/etc/bind/named.conf.default-zones=1516110654
+zone_1=matiasgaston.tp7	2	master	*	/var/lib/bind/matiasgaston.tp7.hosts
+zone_3=.	4	hint	*	/etc/bind/db.root
+zone_2=sergiomartin.tp7	3	forward	*	
+zone_0=tp7	1	master	*	/var/lib/bind/tp7.hosts
+zone_4=localhost	5	master	*	/etc/bind/db.local
+file_/etc/bind/named.conf.local=1528862043
+pidfile_config=/var/run/bind/run/named.pid /var/run/named.pid /var/run/named/named.pid /var/run/bind/run/named/named.pid
+no_chroot_config=0
+pidfile=/var/run/named/named.pid
+zone_5=127.in-addr.arpa	6	master	*	/etc/bind/db.127
+zone_7=255.in-addr.arpa	8	master	*	/etc/bind/db.255

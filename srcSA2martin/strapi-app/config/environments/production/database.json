@@ -1,0 +1,16 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-mongoose",
+      "settings": {
+        "client": "mongo",
+        "uri"   : "mongodb://[2001:a:a:a::4]:27017/strapi?replicaSet=my-mongo-set"
+	},
+      "options": {
+		"debug": true
+		 
+	}
+    }
+  }
+}
