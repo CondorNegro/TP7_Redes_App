@@ -167,7 +167,7 @@ services:
 
 
   api:
-    build: ./strapi/ .
+    build: ./strapi/.
     image: newstrapi
     volumes: 
       - ./strapi-app:/usr/src/api/strapi-app
