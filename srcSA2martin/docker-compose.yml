@@ -73,6 +73,8 @@ services:
         ipv6_address: 2001:bbbb:bbbb:1::3
       nr4dns:
         ipv6_address: 2001:bbbb:bbbb:8::3
+      nr3ng:
+        ipv6_address: 2001:bbbb:bbbb:9::3
 
   r6:
     build: ./ospf/.
@@ -121,24 +123,27 @@ services:
 #--------------------------------
 
   h12:
-    build: ./ospf/.
+    build: ./host/.
     volumes:
       - ./volumes/ospf/h12/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h12/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
-    image: ospf:20180419
+      - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
+    image: host
     privileged: true
     networks:
       nr6h12:
         ipv6_address: 2001:bbbb:bbbb:6::11
 
   h14:
-    build: ./ospf/.
+
+    build: ./host/.
     volumes:
       - ./volumes/ospf/h14/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h14/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
-    image: ospf:20180419
+      - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
+    image: host
     privileged: true
     networks:
       nr8h14:
