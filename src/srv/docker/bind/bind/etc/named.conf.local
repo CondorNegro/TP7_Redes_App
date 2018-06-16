@@ -25,3 +25,15 @@ zone "matiasgaston" {
 	type master;
 	file "/var/lib/bind/matiasgaston.hosts";
 	};
+zone "sergiomartin.tp7" {
+	type master;
+	file "/var/lib/bind/sergiomartin.tp7.hosts";
+	};
+zone "4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001:aaaa:aaaa:8::4.rev";
+	};
+zone "4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001:aaaa:aaaa:9::4.rev";
+	};

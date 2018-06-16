@@ -1,10 +1,13 @@
 pidfile_config=/var/run/bind/run/named.pid /var/run/named.pid /var/run/named/named.pid /var/run/bind/run/named/named.pid
 version=3
+zone_4=sergiomartin.tp7	5	master	*	/var/lib/bind/sergiomartin.tp7.hosts
+file_/etc/bind/named.conf.local=1529175327
 base=/var/cache/bind
-file_/etc/bind/named.conf.local=1529171189
+zone_6=4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa	7	master	*	/var/lib/bind/2001:aaaa:aaaa:9::4.rev
 zone_0=matiasgaston.tp7	1	master	*	/var/lib/bind/matiasgaston.tp7.hosts
 zone_3=matiasgaston	4	master	*	/var/lib/bind/matiasgaston.hosts
 zone_2=4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.b.b.b.b.b.b.b.b.1.0.0.2.ip6.arpa	3	master	*	/var/lib/bind/2001:bbbb:bbbb:9::4.rev
 no_chroot_config=0
 pidfile=/var/run/named/named.pid
+zone_5=4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa	6	master	*	/var/lib/bind/2001:aaaa:aaaa:8::4.rev
 zone_1=4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.b.b.b.b.b.b.b.b.1.0.0.2.ip6.arpa	2	master	*	/var/lib/bind/2001:bbbb:bbbb:8::4.rev
