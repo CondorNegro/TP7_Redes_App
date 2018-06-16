@@ -1,5 +1,5 @@
 {
-  "name": "strapi-app",
+  "name": "myapp",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "lodash": "4.x.x",
-    "strapi": "3.0.0-alpha.12",
-    "strapi-mongoose": "3.0.0-alpha.12"
+    "strapi": "3.0.0-alpha.12.4",
+    "strapi-mongoose": "3.0.0-alpha.12.4"
   },
   "author": {
     "name": "A Strapi developer",
@@ -36,11 +36,11 @@
     }
   ],
   "strapi": {
-    "uuid": "375e1aca-fba0-48fd-9bdd-baad5b6c669c"
+    "uuid": "cb88d948-ff88-4f58-94a1-91766f20b16f"
   },
   "engines": {
-    "node": ">= 7.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 9.0.0",
+    "npm": ">= 5.0.0"
   },
   "license": "MIT"
 }

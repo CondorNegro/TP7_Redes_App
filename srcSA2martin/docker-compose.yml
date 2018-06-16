@@ -123,13 +123,13 @@ services:
 #--------------------------------
 
   h12:
-    build: ./host/.
+    #build: ./host/.
     volumes:
       - ./volumes/ospf/h12/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h12/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
       - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
-    image: host
+    image: ospf:20180419
     privileged: true
     networks:
       nr6h12:
@@ -137,13 +137,13 @@ services:
 
   h14:
 
-    build: ./host/.
+    #build: ./host/.
     volumes:
       - ./volumes/ospf/h14/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h14/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
       - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
-    image: host
+    image: ospf:20180419
     privileged: true
     networks:
       nr8h14:
@@ -172,8 +172,8 @@ services:
 
 
   api:
-    build: ./strapi/.
-    image: newstrapi
+    #build: ./strapi/.
+    image: strapi/strapi
     volumes: 
       - ./strapi-app:/usr/src/api/strapi-app
     privileged: true

@@ -1,3 +1,3 @@
-# strapi-app
+# myapp
 
-A quick description of strapi-app.
+A quick description of myapp.
