@@ -9,8 +9,23 @@
 zone "sergiomartin.tp7" {
 	type master;
 	file "/var/lib/bind/sergiomartin.tp7.hosts";
+    allow-query { any; };
 	};
 zone "tp7" {
 	type master;
 	file "/var/lib/bind/tp7.hosts";
+    allow-query { any; };
+	};
+zone "sergiomartin" {
+	type master;
+	file "/var/lib/bind/sergiomartin.hosts";
+    allow-query { any; };
+	};
+zone "matiasgaston.tp7" {
+	type master;
+	file "/var/lib/bind/matiasgaston.tp7.hosts";
+	};
+zone "4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001:aaaa:aaaa:8::4.rev";
 	};
