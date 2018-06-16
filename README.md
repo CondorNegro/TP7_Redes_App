@@ -6,7 +6,7 @@
 
 ###  Aplicacion  ###
 
-trabajo final para Redes
+Trabajo final para Redes
 
 ## Getting Started
 
@@ -32,6 +32,8 @@ para propositos de desarrollo y testing .
 
 * **Martin Barrera** - *Initial work* - [iotincho](https://github.com/iotincho)
 * **Sergio Sulca** - *Initial work* - [ser0090](https://github.com/ser0090)
+* **Lopez Gaston** - *Initial work* - [CondorNegro](https://github.com/CondorNegro)
+* **Kleiner Matias** - *Initial work* - [ragnar-l](https://github.com/ragnar-l)
 
 ## License
 
