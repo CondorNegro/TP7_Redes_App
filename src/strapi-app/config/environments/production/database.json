@@ -5,12 +5,17 @@
       "connector": "strapi-mongoose",
       "settings": {
         "client": "mongo",
-        "uri"   : "mongodb://[2001:a:a:a::4]:27017/strapi?replicaSet=my-mongo-set"
-	},
+        "uri": "${process.env.DATABASE_URI || ''}",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
+        "port": "${process.env.DATABASE_PORT || 27017}",
+        "database": "${process.env.DATABASE_NAME || 'strapi-production'}",
+        "username": "${process.env.DATABASE_USERNAME || ''}",
+        "password": "${process.env.DATABASE_PASSWORD || ''}"
+      },
       "options": {
-		"debug": true
-		 
-	}
+        "ssl": "${process.env.DATABASE_SSL || false}",
+        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}"
+      }
     }
   }
 }
