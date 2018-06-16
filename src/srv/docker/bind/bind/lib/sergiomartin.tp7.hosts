@@ -1,0 +1,12 @@
+$ttl 38400
+sergiomartin.tp7.	IN	SOA	48ae9734f261. facultad.gmail.com. (
+			1529175051
+			10800
+			3600
+			604800
+			38400 )
+sergiomartin.tp7.	IN	NS	48ae9734f261.
+ns.sergiomartin.tp7.	IN	AAAA	2001:aaaa:aaaa:8::4
+strapi.sergiomartin.tp7.	IN	AAAA	2001:aaaa:aaaa:9::4
+ns.sergiomartin.tp7.	IN	AAAA	2001:aaaa:aaaa:8::4
+strapi.sergiomartin.tp7.	IN	AAAA	2001:aaaa:aaaa:9::4
