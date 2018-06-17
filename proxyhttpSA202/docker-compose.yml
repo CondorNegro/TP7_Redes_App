@@ -1,0 +1,11 @@
+Squid:
+  image: sameersbn/squid:3.3.8-23
+  ports:
+    - "127.10.10.10:3128:3128/tcp"
+  volumes:
+    - /srv/docker/squid/cache:/var/spool/squid3
+  restart: always
+  
+
+#Comando para consultar proxy: 
+#curl --proxy http://127.10.10.10:3128/ https://www.google.com/
