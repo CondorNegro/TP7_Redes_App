@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/proxycliente",
+      "handler": "Proxycliente.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proxycliente/count",
+      "handler": "Proxycliente.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proxycliente/:_id",
+      "handler": "Proxycliente.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/proxycliente",
+      "handler": "Proxycliente.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/proxycliente/:_id",
+      "handler": "Proxycliente.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/proxycliente/:_id",
+      "handler": "Proxycliente.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

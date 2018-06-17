@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "proxycliente",
+  "info": {
+    "name": "proxycliente",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "h14": {
+      "type": "string"
+    }
+  }
+}

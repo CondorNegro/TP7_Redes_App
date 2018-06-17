@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/clientesdeserviciosdeproxy",
+      "handler": "Clientesdeserviciosdeproxy.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clientesdeserviciosdeproxy/count",
+      "handler": "Clientesdeserviciosdeproxy.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clientesdeserviciosdeproxy/:_id",
+      "handler": "Clientesdeserviciosdeproxy.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/clientesdeserviciosdeproxy",
+      "handler": "Clientesdeserviciosdeproxy.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/clientesdeserviciosdeproxy/:_id",
+      "handler": "Clientesdeserviciosdeproxy.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/clientesdeserviciosdeproxy/:_id",
+      "handler": "Clientesdeserviciosdeproxy.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

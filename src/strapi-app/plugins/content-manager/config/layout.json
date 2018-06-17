@@ -1,1 +1,26 @@
-{}
+{
+  "cliente": {
+    "attributes": {
+      "pecio": {
+        "appearance": ""
+      }
+    }
+  },
+  "proxycliente": {
+    "attributes": {
+      "h14": {
+        "appearance": ""
+      }
+    }
+  },
+  "clientesDeServiciosDeProxy": {
+    "attributes": {
+      "Cliente": {
+        "appearance": ""
+      },
+      "IPv6": {
+        "appearance": ""
+      }
+    }
+  }
+}

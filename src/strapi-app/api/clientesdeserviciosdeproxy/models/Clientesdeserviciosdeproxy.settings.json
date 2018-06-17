@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "clientesdeserviciosdeproxy",
+    "description": "Content-Type de SA202"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Cliente": {
+      "default": "HostDefault",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "IPv6": {
+      "default": "2001:a:a:a::1",
+      "unique": true,
+      "type": "string",
+      "required": true
+    }
+  }
+}
