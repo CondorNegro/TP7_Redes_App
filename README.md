@@ -6,7 +6,7 @@
 
 ###  Aplicacion  ###
 
-Trabajo final para Redes
+Trabajo final para Redes. (TP Nro. 7).
 
 ## Getting Started
 
