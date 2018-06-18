@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "proxycliente",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -36,7 +36,7 @@
     }
   ],
   "strapi": {
-    "uuid": "cb88d948-ff88-4f58-94a1-91766f20b16f"
+    "uuid": "4e7d6515-65f3-4240-b0d5-42b06ee7fb6c"
   },
   "engines": {
     "node": ">= 9.0.0",

@@ -1,3 +1,3 @@
-# myapp
+# proxycliente
 
-A quick description of myapp.
+A quick description of proxycliente.

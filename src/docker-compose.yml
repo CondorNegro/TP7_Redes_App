@@ -172,7 +172,7 @@ services:
 
 
   api:
-    #build: ./strapi/.
+    build: ./strapi/.
     image: strapi/strapi
     volumes: 
       - ./strapi-app:/usr/src/api/strapi-app

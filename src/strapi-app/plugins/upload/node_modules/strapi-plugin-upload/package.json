@@ -21,7 +21,7 @@
   "_resolved": "https://registry.npmjs.org/strapi-plugin-upload/-/strapi-plugin-upload-3.0.0-alpha.12.4.tgz",
   "_shasum": "a17944058788c5d2321b2a53eb8c3048636d6590",
   "_spec": "strapi-plugin-upload@alpha",
-  "_where": "/usr/src/api/myapp",
+  "_where": "/usr/src/api/proxycliente",
   "author": {
     "name": "A Strapi developer"
   },

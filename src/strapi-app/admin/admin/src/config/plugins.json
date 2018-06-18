@@ -30,5 +30,13 @@
       "production": "/upload/main.js",
       "staging": "/upload/main.js"
     }
+  },
+  {
+    "id": "users-permissions",
+    "source": {
+      "development": "/users-permissions/main.js",
+      "production": "/users-permissions/main.js",
+      "staging": "/users-permissions/main.js"
+    }
   }
 ]

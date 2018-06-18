@@ -1,16 +1,25 @@
 {
   "connection": "default",
-  "collectionName": "proxycliente",
+  "collectionName": "",
   "info": {
     "name": "proxycliente",
-    "description": ""
+    "description": "SA202_API"
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
-    "h14": {
-      "type": "string"
+    "Cliente": {
+      "default": "h1",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "IPv6": {
+      "default": "2001:a:a:a::1",
+      "unique": true,
+      "type": "string",
+      "required": true
     }
   }
 }

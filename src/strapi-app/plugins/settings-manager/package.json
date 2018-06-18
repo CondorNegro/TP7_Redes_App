@@ -21,7 +21,7 @@
   "_resolved": "https://registry.npmjs.org/strapi-plugin-settings-manager/-/strapi-plugin-settings-manager-3.0.0-alpha.12.4.tgz",
   "_shasum": "f2f68e92786a7f3be2cea873edb95d83246d6a00",
   "_spec": "strapi-plugin-settings-manager@alpha",
-  "_where": "/usr/src/api/myapp",
+  "_where": "/usr/src/api/proxycliente",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",

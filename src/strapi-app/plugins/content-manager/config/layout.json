@@ -1,19 +1,5 @@
 {
-  "cliente": {
-    "attributes": {
-      "pecio": {
-        "appearance": ""
-      }
-    }
-  },
-  "proxycliente": {
-    "attributes": {
-      "h14": {
-        "appearance": ""
-      }
-    }
-  },
-  "clientesDeServiciosDeProxy": {
+  "proxyCliente": {
     "attributes": {
       "Cliente": {
         "appearance": ""
