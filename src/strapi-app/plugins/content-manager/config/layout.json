@@ -1,1 +1,12 @@
-{}
+{
+  "inventarioDeServidores": {
+    "attributes": {
+      "DNS1": {
+        "appearance": ""
+      },
+      "DNS2": {
+        "appearance": ""
+      }
+    }
+  }
+}

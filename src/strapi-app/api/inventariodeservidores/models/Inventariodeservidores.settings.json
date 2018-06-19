@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "inventariodeservidores",
+    "description": "Inventario de Servidores (?)"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "DNS1": {
+      "type": "string"
+    },
+    "DNS2": {
+      "type": "string"
+    }
+  }
+}

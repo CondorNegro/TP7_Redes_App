@@ -1,0 +1,10 @@
+$ttl 38400
+a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa.	IN	SOA	5d040ede7e28. sa1.gmail.com. (
+			1529370742
+			10800
+			3600
+			604800
+			38400 )
+a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa.	IN	NS	5d040ede7e28.
+a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa.	IN	PTR	sa1.
+4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.0.0.0.a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa.	IN	PTR	DNS.
