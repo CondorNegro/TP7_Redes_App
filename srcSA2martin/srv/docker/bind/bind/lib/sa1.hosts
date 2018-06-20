@@ -1,0 +1,24 @@
+$ttl 38400
+sa1.	IN	SOA	ns2.tp7. tin.tincho.com. (
+			1529466043
+			10800
+			3600
+			604800
+			38400 )
+sa1.	IN	NS	ns2.tp7.
+b1.sa1.	IN	AAAA	2001:aaaa:aaaa:1::111
+b1.sa1.	IN	AAAA	2001:aaaa:aaaa:2::111
+b1.sa1.	IN	AAAA	2001:aaaa:aaaa:3::111
+b1.sa1.	IN	AAAA	2001:aaaa:aaaa:10::111
+b1.sa1.	IN	AAAA	2001:c:c:c::a
+r3.sa1.	IN	AAAA	2001:aaaa:aaaa:1::3
+r3.sa1.	IN	AAAA	2001:aaaa:aaaa:8::3
+r3.sa1.	IN	AAAA	2001:aaaa:aaaa:9::3
+r5.sa1.	IN	AAAA	2001:aaaa:aaaa:2::5
+r5.sa1.	IN	AAAA	2001:aaaa:aaaa:5::5
+r5.sa1.	IN	AAAA	2001:aaaa:aaaa:6::5
+r7.sa1.	IN	AAAA	2001:aaaa:aaaa:3::7
+r7.sa1.	IN	AAAA	2001:aaaa:aaaa:5::7
+r7.sa1.	IN	AAAA	2001:aaaa:aaaa:7::7
+h11.sa1.	IN	AAAA	2001:aaaa:aaaa:6::11
+h13.sa1.	IN	AAAA	2001:aaaa:aaaa:7::13

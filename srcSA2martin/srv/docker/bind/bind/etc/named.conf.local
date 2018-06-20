@@ -6,18 +6,36 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "tp7" {
-	type master;
-	file "/var/lib/bind/tp7.hosts";
-	};
 zone "matiasgaston.tp7" {
 	type master;
 	file "/var/lib/bind/matiasgaston.tp7.hosts";
+	allow-query {any;};
+	};
+zone "matiasgaston" {
+	type master;
+	file "/var/lib/bind/matiasgaston.hosts";
 	};
 zone "sergiomartin.tp7" {
-	type forward;
-	forwarders {
-		2001:aaaa:aaaa:8::4;
-		};
-	forward first;
+	type master;
+	file "/var/lib/bind/sergiomartin.tp7.hosts";
+	};
+zone "1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001::_16.rev";
+	};
+zone "b.b.b.b.b.b.b.b.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001:bbbb:bbbb::_48.rev";
+	};
+zone "a.a.a.a.a.a.a.a.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/var/lib/bind/2001:aaaa:aaaa::_48.rev";
+	};
+zone "sa1" {
+	type master;
+	file "/var/lib/bind/sa1.hosts";
+	};
+zone "sa2" {
+	type master;
+	file "/var/lib/bind/sa2.hosts";
 	};
