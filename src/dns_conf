@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "#### Configurar nameserver DNS en HOSTs###"
+
+sudo docker exec -it src_h11_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc/resolv.conf"
+sudo docker exec -it src_h13_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc/resolv.conf"
+
+
+echo "### Configurar BIND ###" 
+sudo docker exec -it src_bind_1 route del default
+sudo docker exec -it src_bind_1 route -A inet6 add default gw 2001:aaaa:aaaa:8::3
+
+
+echo "### Configurar router de borde ###"
+sudo docker exec -it src_b1_1 ip -6 route add 2001:c:c:c::/64 via 2001:c:c:c::9
+sudo docker exec -it src_b1_1 ip -6 route del 2001:c:c:c::/64 dev eth0
+sudo docker exec -it src_b1_1 ip -6 route del default
+ 
+echo "### Configurar proxy Squid ###"
+
+sudo docker exec -it src_squid_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc/resolv.conf"

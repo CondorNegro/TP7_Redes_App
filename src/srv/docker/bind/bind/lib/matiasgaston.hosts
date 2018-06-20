@@ -1,0 +1,9 @@
+$ttl 38400
+matiasgaston.	IN	SOA	48ae9734f261. facultad.gmail.com. (
+			1529171190
+			10800
+			3600
+			604800
+			38400 )
+matiasgaston.	IN	NS	48ae9734f261.
+ns.matiasgaston.	IN	AAAA	2001:a:a:a::1

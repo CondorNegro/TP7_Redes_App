@@ -1,0 +1,14 @@
+$ttl 38400
+matiasgaston.tp7.	IN	SOA	ns.matiasgaston.tp7. mg.mg.redes. (
+			1528835642
+			10800
+			3600
+			604800
+			38400 )
+matiasgaston.tp7.	IN	NS	ns.matiasgaston.tp7.
+ns.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:8::4
+strapi.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:9::4
+ns.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:8::4
+strapi.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:9::4
+strapi.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:9::4
+strapi.matiasgaston.tp7.	IN	AAAA	2001:bbbb:bbbb:9::4

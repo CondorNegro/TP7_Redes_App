@@ -30,6 +30,8 @@ services:
         ipv6_address: 2001:aaaa:aaaa:2::111
       nr7b1:
         ipv6_address: 2001:aaaa:aaaa:3::111
+      proxynet:
+          ipv6_address: 2001:aaaa:aaaa:10::111
 
 #----------------------------------------
 #     ####    SERVIDOR DNS    ####
@@ -122,24 +124,26 @@ services:
 #--------------------------------
 
   h11:
-    build: ./ospf/.
+    build: ./host/.
     volumes:
       - ./volumes/ospf/h11/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h11/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
-    image: ospf:20180419
+      - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
+    image: host
     privileged: true
     networks:
       nr5h11:
         ipv6_address: 2001:aaaa:aaaa:6::11
 
   h13:
-    build: ./ospf/.
+    build: ./host/.
     volumes:
       - ./volumes/ospf/h13/zebra.conf:/etc/quagga/zebra.conf:ro
       - ./volumes/ospf/h13/ospf6d.conf:/etc/quagga/ospf6d.conf:ro
       - ./volumes/ospf/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
-    image: ospf:20180419
+      - ./ssl/CA/TP7-redes.crt:/usr/share/ca-certificates/extra/TP7-redes.crt
+    image: host
     privileged: true
     networks:
       nr7h13:
@@ -206,7 +210,19 @@ services:
       mongonet:
         ipv6_address: 2001:b:b:b::5
         
+        
+#=================================================
+#     ##########   PROXY SQUID   ###########
+#=================================================
 
+  squid:
+      image: sameersbn/squid:3.3.8-23
+      volumes:
+        - ./squid:/var/spool/squid3
+      restart: always
+      networks:
+        proxynet:
+          ipv6_address: 2001:aaaa:aaaa:10::3
 
 #=================================================
 #    ##########   NETWORKS   ###########
@@ -304,3 +320,11 @@ networks:
       driver: default
       config:
          - subnet: 2001:aaaa:aaaa:9::/64
+         
+  proxynet:
+    driver: "bridge"
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+         - subnet: 2001:aaaa:aaaa:10::/64  
