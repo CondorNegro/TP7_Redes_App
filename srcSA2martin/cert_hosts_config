@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+sudo docker exec -it srcsa2martin_h14_1 sh -c "dpkg-reconfigure ca-certificates"
+#Yes
+#Certificates: 1
+sudo docker exec -it srcsa2martin_h12_1 sh -c "dpkg-reconfigure ca-certificates"
+#Yes
+#Certificates: 1 
