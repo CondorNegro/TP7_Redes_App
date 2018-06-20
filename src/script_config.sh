@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 echo "#### Configurar nameserver DNS ###"
 
 sudo docker exec -it src_h11_1 apt -y install dnsutils
@@ -8,6 +10,7 @@ sudo docker exec -it src_h11_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc
 sudo docker exec -it src_h13_1 apt -y install dnsutils
 sudo docker exec -it src_h13_1 apt -y install nano
 sudo docker exec -it src_h13_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc/resolv.conf"
+
 
 
 echo "### Configurar BIND ###" 
@@ -19,4 +22,26 @@ echo "### Configurar router de borde ###"
 sudo docker exec -it src_b1_1 ip -6 route add 2001:c:c:c::/64 via 2001:c:c:c::9
 sudo docker exec -it src_b1_1 ip -6 route del 2001:c:c:c::/64 dev eth0
 sudo docker exec -it src_b1_1 ip -6 route del default
+ 
+ 
+echo "### Configurar proxy Squid ###"
+sudo docker exec -it src_squid_1 sh -c "echo nameserver 2001:aaaa:aaaa:8::4 > /etc/resolv.conf"
+
+
+
+sudo docker exec -it src_h11_1 sh -c "dpkg-reconfigure ca-certificates"
+#Yes
+#Certificates: 1
+sudo docker exec -it src_h13_1 sh -c "dpkg-reconfigure ca-certificates"
+#Yes
+#Certificates: 1 
+
+
+
+
+
+
+
+
+
 
