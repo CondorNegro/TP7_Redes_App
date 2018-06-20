@@ -8,5 +8,15 @@
         "appearance": ""
       }
     }
+  },
+  "inventariodeservidores": {
+    "attributes": {
+      "servidor": {
+        "appearance": ""
+      },
+      "ipv6": {
+        "appearance": ""
+      }
+    }
   }
 }

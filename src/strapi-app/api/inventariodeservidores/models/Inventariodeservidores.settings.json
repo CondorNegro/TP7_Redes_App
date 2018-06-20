@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "inventariodeservidores",
   "info": {
     "name": "inventariodeservidores",
     "description": "Inventario de Servidores (?)"
@@ -9,10 +9,10 @@
     "timestamps": true
   },
   "attributes": {
-    "DNS1": {
+    "servidor": {
       "type": "string"
     },
-    "DNS2": {
+    "ipv6": {
       "type": "string"
     }
   }
