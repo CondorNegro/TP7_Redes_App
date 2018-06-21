@@ -8,6 +8,7 @@ sudo docker exec -it src_h12_1 sh -c "echo nameserver 2001:bbbb:bbbb:8::4 > /etc
 sudo docker exec -it src_h14_1 apt -y install dnsutils
 sudo docker exec -it src_h14_1 apt -y install nano
 sudo docker exec -it src_h14_1 sh -c "echo nameserver 2001:bbbb:bbbb:8::4 > /etc/resolv.conf"
+sudo docker exec -it src_squid_1 sh -c "echo nameserver 2001:bbbb:bbbb:8::4 > /etc/resolv.conf"
 
 
 echo "### Configurar BIND ###" 

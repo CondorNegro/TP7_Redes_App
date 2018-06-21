@@ -30,6 +30,8 @@ services:
         ipv6_address: 2001:bbbb:bbbb:2::111
       nr8b2:
         ipv6_address: 2001:bbbb:bbbb:3::111
+      proxynet:
+          ipv6_address: 2001:bbbb:bbbb:10::111        
 
 #----------------------------------------
 #     ####    SERVIDOR DNS    ####
@@ -211,7 +213,18 @@ services:
       mongonet:
         ipv6_address: 2001:e:e:e::5
         
+#=================================================
+#     ##########   PROXY SQUID   ###########
+#=================================================
 
+  squid:
+      image: sameersbn/squid:3.3.8-23
+      volumes:
+        - ./squid:/var/spool/squid3
+      restart: always
+      networks:
+        proxynet:
+          ipv6_address: 2001:bbbb:bbbb:10::3
 
 #=================================================
 #    ##########   NETWORKS   ###########
@@ -310,3 +323,11 @@ networks:
       driver: default
       config:
          - subnet: 2001:bbbb:bbbb:9::/64
+
+  proxynet:
+    driver: "bridge"
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+         - subnet: 2001:bbbb:bbbb:10::/64
